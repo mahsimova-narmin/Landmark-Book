@@ -4,10 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.narminmahsimova.landmarkbookkotlin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -60,14 +62,9 @@ class MainActivity : AppCompatActivity() {
         landmarkList.add(moai)
         landmarkList.add(tajMahal)
 
-        val adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,landmarkList.map{landmark -> landmark.name})
-        //android.R.layout.simple_list_item_1 is used if only you want to show text on xml file
-        binding.listView.adapter = adapter
+        val landmarkAdapter = LandmarkAdapter(landmarkList)
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = landmarkAdapter
 
-        binding.listView.onItemClickListener = AdapterView.OnItemClickListener{parent, view, i, lng ->
-            val intent = Intent(MainActivity@this, DetailsActivity::class.java)
-            intent.putExtra("landmark",landmarkList.get(i))
-            startActivity(intent)
-        }
     }
 }
