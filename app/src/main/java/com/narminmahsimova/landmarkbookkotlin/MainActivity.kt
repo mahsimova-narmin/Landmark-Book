@@ -1,6 +1,8 @@
 package com.narminmahsimova.landmarkbookkotlin
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -11,7 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.narminmahsimova.landmarkbookkotlin.databinding.ActivityMainBinding
-
+var chosenLandmark: Landmark? = null
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -46,6 +48,9 @@ class MainActivity : AppCompatActivity() {
         val cathedral = Landmark("Saint Basil's Cathedral", "Saint Basil's Cathedral is a Christian church in Red Square, Moscow, and one of the most recognizable symbols of Russia. Built between 1555 and 1561 by order of Ivan the Terrible, it was designed to commemorate the capture of Kazan and Astrakhan. The cathedral is famous for its unique, colorful \"onion domes\" and its complex layout of nine chapels built around a central core. Now a museum and a UNESCO World Heritage site, it remains a masterpiece of Russian architecture and a global cultural icon.", R.drawable.stbasilcathedral)
         val moai = Landmark("Moai", "The Moai are monolithic human figures carved by the Rapa Nui people on Easter Island, Chile, between 1250 and 1500 AD. Carved primarily from volcanic ash, nearly 900 statues are spread across the island, with the largest weighing over 80 tons. These massive figures, many of which sit on stone platforms called ahu, are believed to represent the living faces of deified ancestors. They remain a global mystery of ancient engineering and a central symbol of Polynesian cultural heritage.", R.drawable.moai)
         val tajMahal = Landmark("Taj Mahal", "The Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in Agra, India. It was commissioned in 1632 by the Mughal emperor Shah Jahan to house the tomb of his favorite wife, Mumtaz Mahal; it also houses the tomb of Shah Jahan himself. The tomb is the centerpiece of a 17-hectare (42-acre) complex, which includes a mosque and a guest house, and is set in formal gardens bounded on three sides by a crenellated wall. The Taj Mahal was designated as a UNESCO World Heritage Site in 1983 for being \"the jewel of Muslim art in India and one of the universally admired masterpieces of the world's heritage.\"", R.drawable.taj_mahal)
+
+        //Inefficient method
+        //val flameBitmap = BitmapFactory.decodeResource(resources,R.drawable.flametowers)
 
         landmarkList.add(flameTower)
         landmarkList.add(blueMosque)
