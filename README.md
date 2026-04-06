@@ -2,8 +2,8 @@
 
 ![Main Screen](screenshots/Screenshot_20260406_234416.png)
 
-![Flame Towers](screenshots/flame_towers)
+![Flame Towers](screenshots/flame_towers.png)
 
-![Blue Mosque](screenshots/result.png)
+![Blue Mosque](screenshots/blue_mosque.png)
 
 ![Colosseum](screenshots/colosseum.png)
