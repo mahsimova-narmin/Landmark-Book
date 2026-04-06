@@ -26,13 +26,12 @@ class DetailsActivity : AppCompatActivity() {
 
         val intent = intent
         //val selectedLandmark = intent.getSerializableExtra("landmark") as Landmark
-
-        val selectedLandmark = chosenLandmark
+        val selectedLandmark = Singleton.chosenLandmark
 
         selectedLandmark?.let {
-            binding.nameView.text = selectedLandmark!!.name
-            binding.aboutView.text = selectedLandmark!!.info
-            binding.imageView.setImageResource(selectedLandmark!!.image)
+            binding.nameView.text = it.name
+            binding.aboutView.text = it.info
+            binding.imageView.setImageResource(it.image)
         }
 
     }
